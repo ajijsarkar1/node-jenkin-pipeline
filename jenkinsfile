@@ -1,1 +1,13 @@
+pipeline {
+    agent {label 'built-in node'}
 
+    stages {
+        stage('check version') {
+            steps {
+                // Checkout the code from version control
+                sh "node --version"
+                sh "npm --version"
+            }
+        }       
+    }
+}
